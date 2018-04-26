@@ -1,0 +1,22 @@
+body{
+	width:70%;
+	margin-left: 10%;
+	font-family: 'Raleway', sans-serif;
+	line-height: 150%;
+} 
+.tooltip 
+{
+    border: 3px solid lightgreen;
+	border-radius : 5px;
+    display: none;
+    width: 20%;
+	padding: 5px;
+	background-color: white;
+
+}
+.trigger
+{
+    color:cadetblue;
+    font-weight: bold;
+}
+
