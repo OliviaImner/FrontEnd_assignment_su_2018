@@ -18,9 +18,9 @@ canvas{
 }
 #save{
 	overflow: visible;
-	width: 25%;
+	width: 75%;
 	border: 1px solid pink;
 	overflow: auto;
-	float: right;
+	float: left;
 	word-wrap: break-word;
 }

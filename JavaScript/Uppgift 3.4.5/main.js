@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	$('#signup').validate({
+	$('#signingUp').validate({
 		//debug: true,
 		errorElement: "span",
 		rules: {
@@ -20,7 +20,7 @@ $(document).ready(function(){
 				required: true,
 				email: true
 			}
-		}, //Rules
+		}, //regler
 		messages: {
 			username: {
 				required: "Fyll i ditt användarnamn!",
@@ -35,42 +35,44 @@ $(document).ready(function(){
 			},
 			name: "Fyll i ditt namn!",
 			email: {
-				required: "Fyll i din e-postadress!",
-				email: "Fyll i en giltig e-postadress!"
+				required: "Fyll i din mail!",
+				email: "Fyll i en giltig mail!"
 			}
-		}, //Messages
+		}, 
+        //meddelanden 
 		submitHandler: function(form) {
 		    window.alert("Allt är ifyllt korrekt!");
 		    return false;
   		}
-	});//Validate
-	
-	$(':text,:password').focus(function(){
-		$(this).css('border', '2px solid lightblue');
 	});
+    //validerar
+    
+	$(':text,:password').focus(function(){
+		$(this).css('border', '2px solid red');
+	});//röd runt om textfältet 
+    
 	$(':text,:password').blur(function(){
 		$(this).css('border', '');
 	});
 	$(':text:first').focus();
 	$(':radio').click(function(){
-		if($(this).val() == 'Röd')
+		if($(this).val() == 'Hund')
 			disableCheckboxes();
 		else
 			enableCheckboxes();
-	});
-	
+	}); //om radiobox hund är vald inaktivera kryssrutor
 });
 
 function disableCheckboxes(){
 	$(':checkbox').each(function(){
-		if($(this).val()!='Ruby'){
+		if($(this).val()!='R'){
 			$(this).attr('disabled', true);
 		}
 	});
 }
 function enableCheckboxes(){
 	$(':checkbox').each(function(){
-		if($(this).val()!='Ruby'){
+		if($(this).val()!='R'){
 			$(this).attr('disabled', false);
 		}
 	});

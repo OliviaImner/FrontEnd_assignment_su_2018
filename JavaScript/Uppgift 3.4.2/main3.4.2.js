@@ -8,13 +8,13 @@ $(document).ready(function(){
 		imageArray[x] = new Image();
 		imageArray[x].src = imageSrcArray[x];
 	}
-                                 
+    //vid klick ändras bilderna                              
 $('#imageViewer').click(function() {
 		if(++i > imageArray.length-1)
 			i=0;
 		$(this).attr('src', imageArray[i].src);
 	});
-
+//när muspekaren drar över bilden ändras bilden
 	$('#rollover').hover(function() {
 		$(this).attr('src', imageArray[2].src);
 	}, function(){
@@ -24,7 +24,7 @@ $('#imageViewer').click(function() {
     var canvas = document.getElementById("drawingCanvas");
 	var ctx = canvas.getContext("2d");
     
-    //blå linhe med bredd på 10.
+    //blå linje med bredd på 10.
     ctx.lineWidth = 10;
 	ctx.strokeStyle = "darkblue";
     //Butt värdet på en linje 
@@ -56,7 +56,7 @@ $('#imageViewer').click(function() {
     ctx.bezierCurveTo(20,100,200,100,200,200);
     ctx.stroke();
     
-    //Save används för att kunna komma tillbaka från att skugga ett objekt
+    //save används för att kunna komma tillbaka från att skugga ett objekt
 	ctx.save();
 	//Cirkeln
 	ctx.beginPath();
@@ -70,10 +70,10 @@ $('#imageViewer').click(function() {
 	ctx.fill();
     ctx.moveTo(100,12);
 
-	//Återställer context till när det sparades innan triangeln ritades
+	//återställer context till när det sparades innan triangeln ritades
 	ctx.restore();
     
-    // Skriver ut en text
+    // skriver ut en text
 	ctx.font = "bold 60px 'Raleway',sans-serif";
 	ctx.textBaseline = "top";
 	ctx.fillStyle = "black";
@@ -114,7 +114,7 @@ $('#imageViewer').click(function() {
 
 	ctx.restore();
 	
-    //en rektangel som använder mönster
+    //rektangel som använder mönster
 	ctx.beginPath();
     ctx.translate(75, 110);
 	ctx.rect(500, 500, 170, 170);
@@ -125,6 +125,7 @@ $('#imageViewer').click(function() {
 	ctx.fillStyle = pattern;
 
 	ctx.fill();
+    //url för canvas bilden
     var url = canvas.toDataURL();
 	$('#save').html(url);
 
